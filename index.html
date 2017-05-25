@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wikipedia Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/css/uikit.min.css" />
+</head>
+<body>
+  <div class="uk-container uk-container-small">
+    <h1 class="uk-heading-line"><span>Search <i uk-icon="icon: world; ratio: 2"></i> Wikipedia</span></h1>
+    <div uk-grid>
+      <div class="uk-width-expand@m">
+        <div class="uk-margin">
+          <form id="search-form">
+            <div class="uk-inline uk-width-1-1">
+              <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
+              <input id="search-input" class="uk-input" type="text" placeholder="Search Wikipedia">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div>Or</div>
+      <div class="uk-width-1-2@m">
+        <a class="uk-button uk-button-primary uk-width-1-1" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener"><span uk-icon="icon: world"></span> Open A Random Article</a>
+      </div>
+    </div>
+    <hr class="uk-divider-small">
+
+    <div class="uk-background-muted uk-padding uk-panel">
+      <p class="uk-h4">Default</p>
+    </div>
+
+  </div>
+  <!-- jQuery is required -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/js/uikit.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.24/js/uikit-icons.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
