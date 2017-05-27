@@ -10,27 +10,30 @@
 <body>
   <div class="uk-container uk-container-small">
     <h1 class="uk-heading-line"><span>Search <i uk-icon="icon: world; ratio: 2"></i> Wikipedia</span></h1>
-    <div uk-grid>
-      <div class="uk-width-expand@m">
-        <div class="uk-margin">
-          <form id="search-form">
-            <div class="uk-inline uk-width-1-1">
-              <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
-              <input id="search-input" class="uk-input" type="text" placeholder="Search Wikipedia">
-            </div>
-          </form>
+
+    <form id="search-form" action="">
+      <div class="uk-flex uk-width-1-1">
+        <div class="uk-width-2-3">
+          <div class="uk-inline uk-width-1">
+            <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: search"></a>
+            <input id="search-input" class="uk-input" type="text" placeholder="Search Wikipedia">
+          </div>
+        </div>
+        <div class="uk-width-1-3">
+          <div class="uk-inline uk-width-1-1"><button class="uk-button uk-button-primary uk-width-1-1" type="submit">Search</button></div>
         </div>
       </div>
-      <div>Or</div>
-      <div class="uk-width-1-2@m">
-        <a class="uk-button uk-button-primary uk-width-1-1" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener"><span uk-icon="icon: world"></span> Open A Random Article</a>
-      </div>
-    </div>
+    </form>
+
     <hr class="uk-divider-small">
 
-    <div class="uk-background-muted uk-padding uk-panel">
-      <p class="uk-h4">Default</p>
+    <div id="search-results" class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
     </div>
+
+    <div>
+      <a class="uk-button uk-button-primary uk-width-1-1" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" rel="noopener"><span uk-icon="icon: world"></span> Open A Random Article</a>
+    </div>
+
 
   </div>
   <!-- jQuery is required -->
