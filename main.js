@@ -3,6 +3,16 @@ const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
 searchInput.focus();
 
+function returnErrorContent(message) {
+  return `
+  <div class="uk-width-1-1 uk-text-center">
+    <div class="uk-card uk-card-default uk-card-body">
+      <p>${message}</p>
+    </div>
+  </div>
+  `;
+}
+
 searchForm.addEventListener('submit', function(e) {
   e.preventDefault();
   searchResults.innerHTML = '';
@@ -54,32 +64,20 @@ searchForm.addEventListener('submit', function(e) {
             searchResults.appendChild(card);
           }
         } else {
-          const noResultsContent = `
-          <div class="uk-width-1-1 uk-text-center">
-            <div class="uk-card uk-card-default uk-card-body">
-              <p>Your search of <em>${searchTerm}</em> didn't return any results. Want to try another search term?</p>
-            </div>
-          </div>
-          `
+          const noResultsContent = returnErrorContent(`Your search of <em>${searchTerm}</em> didn't return any results. Want to try another search term?`);
           searchResults.innerHTML = noResultsContent;
-          searchInput.value = "";
         }
 
       })
       .fail(function() {
-        console.log( "error" );
+        const endPointFail = returnErrorContent(`<em>We're sorry</em>, but we're unable to connect to Wikipedia right now. Please try again later.`);
+        searchResults.innerHTML = endPointFail;
       })
       .always(function() {
         console.log( "complete" );
       });
   } else {
-    const noSearchInputText = `
-    <div class="uk-width-1-1">
-      <div class="uk-card uk-card-default uk-card-body">
-        <p><em>Hmmm... looks like the search field is blank.</em> Probably my mistake. Try typing something in the search field above before pressing the "Search" button.</p>
-      </div>
-    </div>
-    `
+    const noSearchInputText = returnErrorContent(`<em>Hmmm... looks like the search field is blank.</em> Probably my mistake. Try typing something in the search field above before pressing the "Search" button.`);
     searchResults.innerHTML = noSearchInputText;
   }
 
